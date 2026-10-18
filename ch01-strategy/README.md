@@ -93,12 +93,15 @@ classDiagram
 
 ## 4. 程式碼
 
-- 書中範例:[src/book/](src/book/)(目前有 [Duck.cs](src/book/Duck.cs))
-- 自己情境改寫:[src/mine/](src/mine/)(情境:____)
+- 書中範例:[src/book/](src/book/)
+- 自己情境改寫:[src/mine/](src/mine/)
 
 ## 5. 什麼時候不該用
 
-(過度設計的警訊、更簡單的替代方案)
+- 只有兩三種行為且幾乎不會變：一個 if/else 或 switch 就夠了
+- 行為只是一小段簡單邏輯：C# 可直接傳 Func<> 或 lambda，不必為每個策略開 class
+- 使用者必須懂每個策略的差異才能選：複雜度只是被轉移
+- 警訊：策略 class 比實際用到的情況還多，或每個 class 只有一行程式
 
 ## 6. 和其他 pattern 的差異
 
@@ -106,4 +109,9 @@ classDiagram
 
 ## 7. 我的疑問 / 還沒搞懂的地方
 
--
+- Duck clas 為什麼不該 : IFlyBehavior？
+    - Duck 是「持有」行為（has-a），不是「成為」行為
+- SetFlyBehavior 為什麼不用 abstract？	
+    - 所有鴨子做法相同，放基底類別避免重複；要強制初始化用建構子注入
+- C# 的 CS0542（成員名稱與類別同名）
+    - 類別改名 QuackSound；改用建構子注入
