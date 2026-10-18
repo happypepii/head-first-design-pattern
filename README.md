@@ -13,6 +13,7 @@
 
 | # | Pattern | 筆記 | 程式碼 | 自己情境改寫 |
 |---|---------|:----:|:------:|:------------:|
+| 00 | [Introduction](ch00-introduction/) | [ ] | [ ] | [ ] |
 | 01 | [Strategy](ch01-strategy/) | [ ] | [ ] | [ ] |
 | 02 | [Observer](ch02-observer/) | [ ] | [ ] | [ ] |
 | 03 | [Decorator](ch03-decorator/) | [ ] | [ ] | [ ] |
